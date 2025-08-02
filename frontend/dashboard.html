@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard – QuickDesk</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <span class="logo">QuickDesk</span>
+    <button id="logoutBtn">Logout</button>
+  </nav>
+
+  <main>
+    <h2>My Tickets</h2>
+    <button id="newTicketBtn">+ Create Ticket</button>
+    <div class="filters">
+      <label>Status:
+        <select id="statusFilter">
+          <option value="">All</option>
+          <option value="open">Open</option>
+          <option value="in_progress">In Progress</option>
+          <option value="resolved">Resolved</option>
+          <option value="closed">Closed</option>
+        </select>
+      </label>
+      <input type="text" id="searchBox" placeholder="Search tickets..." />
+    </div>
+    <div id="ticketsList"></div>
+  </main>
+
+  <!-- Ticket Creation Modal (placed after main for clarity, recommended for overlays) -->
+  <div id="ticketModal" class="modal" style="display:none;">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <span class="close" id="closeModalBtn">&times;</span>
+      <h3 id="modal-title">Create New Ticket</h3>
+      <form id="createTicketForm" enctype="multipart/form-data" autocomplete="off">
+        <label for="ticketSubject">Subject:</label>
+        <input type="text" id="ticketSubject" required />
+
+        <label for="ticketDescription">Description:</label>
+        <textarea id="ticketDescription" required></textarea>
+
+        <label for="ticketCategory">Category:</label>
+        <select id="ticketCategory" required>
+          <option value="">Select Category</option>
+          <!-- Categories will be populated dynamically -->
+        </select>
+
+        <label for="ticketAttachment">Attachment: (optional)</label>
+        <input type="file" id="ticketAttachment" />
+
+        <button type="submit">Submit Ticket</button>
+        <p id="ticketFormMsg" class="error"></p>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

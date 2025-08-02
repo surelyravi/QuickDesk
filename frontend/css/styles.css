@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f7fb;
+  margin: 0; padding: 0;
+}
+
+.auth-container {
+  background: white;
+  margin: 40px auto;
+  max-width: 350px;
+  box-shadow: 0 0 10px #ddd;
+  padding: 30px 24px;
+  border-radius: 12px;
+}
+
+label, input {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+}
+button {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background: #1d4ed8;
+}
+.error {
+  color: red;
+  min-height: 12px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 0.95em;
+}
